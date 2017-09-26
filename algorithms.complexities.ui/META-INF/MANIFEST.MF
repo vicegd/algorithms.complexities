@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: algorithms.complexities.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: algorithms.complexities.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: algorithms.complexities,
+ algorithms.complexities.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: algorithms.complexities.ui.contentassist,
+ algorithms.complexities.ui.quickfix,
+ algorithms.complexities.ui.internal
+Bundle-Activator: algorithms.complexities.ui.internal.ComplexitiesActivator

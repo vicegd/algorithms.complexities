@@ -1,0 +1,42 @@
+grammar algorithms.complexities.Complexities with org.eclipse.xtext.common.Terminals
+
+generate complexities "http://www.complexities.algorithms/Complexities"
+
+Model:
+	//'language' '=' language = LanguageCode
+	'calculations' calculations += Calculation+
+;	
+	
+Calculation:
+	ExecutionTimes | Sizes
+;
+
+ExecutionTimes:
+	'with' 'a' 'complexity' complexity = Complexity
+	'if' 'time' '=' time1 = INT time1Unit = TimeUnits 'for' 'size' '=' size1 = INT 'calculate' 'time' 'in' time2Unit = TimeUnits 'for' 'size' '=' size2 = INT
+;
+
+Sizes: 
+	'with' 'a' 'complexity' complexity = Complexity
+	'if' 'size' '=' size1 = INT 'for' 'time' '=' time1 = INT time1Unit = TimeUnits 'calculate' 'size' 'with' 'time' '=' time2 = INT time2Unit = TimeUnits
+;
+
+Complexity:
+	'O''(' (INT | LINEAR | EXPONENTIAL | LOGARITHMIC | LINLOG | LINLOGEXP | POWER | FACTORIAL ) ')'
+;
+
+terminal LINEAR: 'n';
+terminal EXPONENTIAL: 'n^'('1'..'9')+;
+terminal LOGARITHMIC: 'log''n';
+terminal LINLOG: 'n''log''n';
+terminal LINLOGEXP: 'n^'('1'..'9')+'log^'('1'..'9')+' '+'n';
+terminal POWER: ('1'..'9')+'^''n';
+terminal FACTORIAL: 'n!';
+
+//enum LanguageCode: 
+//	ALL | EN | ES
+//;
+
+enum TimeUnits:
+	seconds | minutes | hours | days | weeks | months | years
+;
