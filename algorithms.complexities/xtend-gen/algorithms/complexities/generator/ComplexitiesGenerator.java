@@ -3,7 +3,7 @@
  */
 package algorithms.complexities.generator;
 
-import algorithms.complexities.generator.WebGenerator;
+import algorithms.complexities.generator.WebGeneratorEN;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
@@ -18,7 +18,7 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class ComplexitiesGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    WebGenerator wg = new WebGenerator(resource, fsa);
+    WebGeneratorEN wg = new WebGeneratorEN(resource, fsa);
     wg.generate();
   }
 }

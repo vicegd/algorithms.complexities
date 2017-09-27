@@ -16,7 +16,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class ComplexitiesGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		var wg = new WebGenerator(resource, fsa)
+		var wg = new WebGeneratorEN(resource, fsa)
 		wg.generate
 	}
 }
