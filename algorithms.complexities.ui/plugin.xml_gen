@@ -414,8 +414,7 @@
 			class="algorithms.complexities.ui.ComplexitiesExecutableExtensionFactory:algorithms.complexities.ui.wizard.ComplexitiesNewProjectWizard"
 			id="algorithms.complexities.ui.wizard.ComplexitiesNewProjectWizard"
 			name="Complexities Project"
-			project="true"
-			icon="icons/alg.ico">
+				project="true">
 		</wizard>
 	</extension>
 </plugin>

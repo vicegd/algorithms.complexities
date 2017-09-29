@@ -11,6 +11,7 @@ import algorithms.complexities.ui.labeling.ComplexitiesDescriptionLabelProvider;
 import algorithms.complexities.ui.labeling.ComplexitiesLabelProvider;
 import algorithms.complexities.ui.outline.ComplexitiesOutlineTreeProvider;
 import algorithms.complexities.ui.quickfix.ComplexitiesQuickfixProvider;
+import algorithms.complexities.ui.wizard.ComplexitiesProjectCreator;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
@@ -76,6 +77,7 @@ import org.eclipse.xtext.ui.refactoring.ui.IRenameSupport;
 import org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences;
 import org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider;
 import org.eclipse.xtext.ui.shared.Access;
+import org.eclipse.xtext.ui.wizard.IProjectCreator;
 
 /**
  * Manual modifications go to {@link ComplexitiesUiModule}.
@@ -281,6 +283,11 @@ public abstract class AbstractComplexitiesUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
 	public void configureCompareViewerTitle(Binder binder) {
 		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Complexities Compare");
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.ui.projectWizard.SimpleProjectWizardFragment2
+	public Class<? extends IProjectCreator> bindIProjectCreator() {
+		return ComplexitiesProjectCreator.class;
 	}
 	
 }
